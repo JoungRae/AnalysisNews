@@ -3,60 +3,46 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>News Reports</title>
+  <title>Main Page</title>
   <style>
-    .report-card {
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card {
       border: 1px solid #ddd;
-      margin: 10px 0;
       padding: 15px;
-      background-color: #f9f9f9;
-    }
-
-    .report-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .report-link {
-      font-size: 14px;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-
-    .report-summary,
-    .report-analysis {
-      font-size: 14px;
-      color: #666;
-    }
-
-    a {
-      text-decoration: none;
-      color: blue;
-    }
-    .sentiment-tag {
-        font-weight: normal;
-        padding: 3px 8px;
-        border-radius: 5px;
-        margin-right: 10px;
-        color: #fff;
-    }
-    .sentiment-positive {
-        background-color: #4CAF50; /* Green */
-    }
-    .sentiment-negative {
-        background-color: #f44336; /* Red */
-    }
-    .sentiment-neutral {
-        background-color: #2196F3; /* Blue */
+      margin: 10px;
+      text-align: center;
+      cursor: pointer;
+      flex-basis: 20%;
     }
   </style>
 </head>
 
 <body>
-  <h1>News Reports</h1>
-  <div id="csv-root">Loading data...</div>
-  <script src="script.js"></script>
+  <h1>Select a Company</h1>
+  <div class="card-container">
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Apple Inc.');">Apple Inc.
+    </div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Microsoft Corporation');">
+      Microsoft Corporation</div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Alphabet Inc.');">Alphabet
+      Inc.</div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Amazon.com, Inc.');">
+      Amazon.com, Inc.</div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('NVIDIA Corporation');">NVIDIA
+      Corporation</div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Meta Platforms, Inc.');">Meta
+      Platforms, Inc.</div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Tesla, Inc.');">Tesla, Inc.
+    </div>
+    <div class="card" onclick="location.href='subpage.html?company=' + encodeURIComponent('Delta Air Lines, Inc.');">
+      Delta Air Lines, Inc.</div>
+  </div>
+  <!-- Optional: Link to JavaScript file if needed -->
 </body>
 
 </html>

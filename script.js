@@ -1,7 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const csvRoot = document.getElementById('csv-root');
 
-  fetch('news.csv')
+document.addEventListener('DOMContentLoaded', function() {
+  const pageTitleElement = document.getElementById('page-title');
+  const companyName = getCompanyNameFromURL();
+
+  if (companyName) {
+    pageTitleElement.textContent = `${companyName} News Reports`;
+
+  }
+
+  const csvRoot = document.getElementById('csv-root');
+  fetch(`${companyName}.csv`)
     .then(response => response.text())
     .then(csvText => {
       const data = parseCSV(csvText);
@@ -30,7 +38,7 @@ function parseCSV(csvText) {
 
 function displayDataAsReports(data, container) {
   data.slice(1).forEach(row => {
-    if (row.length < 6) return; // Ensure row has enough columns
+    if (row.length < 7) return; // Ensure row has enough columns
 
     const reportCard = document.createElement('div');
     reportCard.className = 'report-card';
@@ -40,6 +48,12 @@ function displayDataAsReports(data, container) {
     const sentimentClass = `sentiment-tag sentiment-${row[4].toLowerCase()}`;
     title.innerHTML = `<span class="${sentimentClass}">${row[4]}</span>${row[0]}`;
     reportCard.appendChild(title);
+
+    // Create and append the date
+    const dateElement = document.createElement('div');
+    dateElement.className = 'report-date';
+    dateElement.textContent = row[6];
+    reportCard.appendChild(dateElement);
 
     const link = document.createElement('a');
     link.className = 'report-link';
@@ -84,4 +98,9 @@ function createToggle(section, label) {
     toggle.textContent = isHidden ? `Hide ${label}` : `Show ${label}`;
   };
   return toggle;
+}
+
+function getCompanyNameFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('company');
 }
