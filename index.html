@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesla News Analysis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-        .content {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-        }
-        .news-item {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .news-title {
-            font-size: 20px;
-            color: #333;
-        }
-        .news-description {
-            font-size: 16px;
-            color: #666;
-        }
-        .analysis {
-            font-style: italic;
-            color: #007bff;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>Tesla News Analysis</h1>
-    </div>
-    <div class="content">
-        <!-- News item 1 -->
-        <div class="news-item">
-            <h2 class="news-title">News Title Here</h2>
-            <p class="news-description">News description goes here...</p>
-            <p class="analysis">Analysis: <span>Your analysis of the news.</span></p>
-        </div>
-        
-        <!-- News item 2 -->
-        <!-- Repeat the structure for more news items -->
 
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <title>News Reports</title>
+  <style>
+    .report-card {
+      border: 1px solid #ddd;
+      margin: 10px 0;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .report-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .report-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .report-summary,
+    .report-analysis {
+      font-size: 14px;
+      color: #666;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+    .sentiment-tag {
+        font-weight: normal;
+        padding: 3px 8px;
+        border-radius: 5px;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .sentiment-positive {
+        background-color: #4CAF50; /* Green */
+    }
+    .sentiment-negative {
+        background-color: #f44336; /* Red */
+    }
+    .sentiment-neutral {
+        background-color: #2196F3; /* Blue */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>News Reports</h1>
+  <div id="csv-root">Loading data...</div>
+  <script src="script.js"></script>
 </body>
+
 </html>
